@@ -6,7 +6,7 @@ This AI agent (WIP) is an offshoot of an N8N workflow that I've been using for t
 
 ![alt text](graphics/workflow-1.png)
 
-![alt text](graphics/myuse.png)
+
 
 ## Table of Contents
 
@@ -32,6 +32,21 @@ Just as I love creating AI voice agents for my own uses but think that deploying
 As much as this use-case is potentially vastly enriching, it is also rife with abuse in the form of those itnent on seeking out *really* human-like voices and deceptively passing off the generated content as human created for the purpose of turn-a-quick-dime get-rich-quick schemes. 
 
 Then again the same can be said about almost every technology...
+
+## My Personal Workflow
+
+Here's how I'm using this currently:
+
+![alt text](graphics/myuse.png)
+
+- I use Voicenotes.com. When I want to send a prompt into my personal podcast pipeline, I tag it with 'Just Ask AI Podcast' 
+- That sends a webhook to trigger the workflow 
+- I collect the episode and listen to it whenever I want!
+
+![alt text](graphics/vn1.png)
+
+![alt text](graphics/vn2.png)
+
 
 ## Suggested Workflows For Personal Use
 
