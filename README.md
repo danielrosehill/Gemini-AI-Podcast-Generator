@@ -14,13 +14,24 @@ This AI agent (WIP) is an offshoot of an N8N workflow that I've been using for t
 - [Deployment Workflows](#deployment-workflows)
 - [Getting Started](#getting-started)
 
-## Use Case & AI Ethics Note
+## Use Case & AI Ethics Notes
 
-I love sending quite specific prompts to AI and using its responses to learn about things (see: `example-prompt`). My personal use-case is, therefore, probably best described as "self-directed learning."
+The TL;DR of *"why I wanted to make this"* is that I send in AI prompts throughout the day but am often in the best frame of mind to listen to them at a later point in time (like when I'm on a walk). 
 
-I love using AI for purposes like this and am sharing it for others who wish to create similar implementations. This was never built with the intention of creating a commercial podcast.
+I've long been interested in finding ways to better store (and manage) AI outputs. This was an outgrowth of a previous model I built which stored outputs (and prompts) in wikis and Google Drives.
 
-There is an argument in favor of sharing AI-produced content like this with the internet-at-large. But I believe it is only ethical to do so under limited circumstances: that content is offered freely; it is made very clear to listeners that it was generated with AI; no terms of service are violated in the process. 
+As a big believer in open source my thoughts about "when are AI podcasts okay?" goes something like this:
+
+- It's for your own personal listening 
+- It's created for that reason but is also shared publicly with the clear disclaimer that it was AI-created and no TOSes are violated in the process  
+
+Just as I love creating AI voice agents for my own uses but think that deploying them as "customer service bots" is amoral and kind of shady, I feel the same way about this application of AI.
+
+As much as this use-case is potentially vastly enriching, it is also rife with abuse in the form of those itnent on seeking out *really* human-like voices and deceptively passing off the generated content as human created for the purpose of turn-a-quick-dime get-rich-quick schemes. 
+
+Then again the same can be said about almost every technology...
+
+## Suggested Workflows For Personal Use
 
 For those who are similarly interested in using this pattern for learning, here are some variations on the workflow that I have validated and which are appropriate:
 
@@ -38,8 +49,8 @@ This sample episode demonstrates the full capabilities of the Gemini Podcast Gen
 
 | Element | Link | Details |
 |---------|------|---------|
-| **🎧 Audio Episode** | [episode.mp3](generated-episodes/the-gatekeepers-of-your-digital-castle-how-firewalls-filter-the-web/episode.mp3) | **Duration:** 7m 51s |
-| **📝 Episode Script** | [script.txt](generated-episodes/the-gatekeepers-of-your-digital-castle-how-firewalls-filter-the-web/script.txt) | Full transcript with AI-generated content |
+| **Audio Episode** | [episode.mp3](generated-episodes/the-gatekeepers-of-your-digital-castle-how-firewalls-filter-the-web/episode.mp3) | **Duration:** 7m 51s |
+| **Episode Script** | [script.txt](generated-episodes/the-gatekeepers-of-your-digital-castle-how-firewalls-filter-the-web/script.txt) | Full transcript with AI-generated content |
 | **📋 Episode Metadata** | [metadata.json](generated-episodes/the-gatekeepers-of-your-digital-castle-how-firewalls-filter-the-web/metadata.json) | Generation details, models used, timestamps |
 | **💭 Original Prompt** | [prompt.txt](generated-episodes/the-gatekeepers-of-your-digital-castle-how-firewalls-filter-the-web/prompt.txt) | User's original question about firewalls |
 
