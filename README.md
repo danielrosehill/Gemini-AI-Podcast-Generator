@@ -99,7 +99,19 @@ This engineering makes Gemini quite an ideal platform for podcast generation. In
 
 ---
 
+## The Building Blocks
+
+The building blocks of the scripts are:
+
+- Process 1: AI agent generating a TTS-safe narrative from the user prompt. If you're using ElevenLabs you could edit this propmt to specifically instruct it to respond in speech markup language and add appropriate emphasis and tone parameters  
+- Process 2: TTS. There is a vast array of options here. I've used Speechify, LemonFox, among others. The pifall you will run into is the length limit for the mp3 that can be generated and the fact that some APIs will return your audio in raw binary 
+
+If cost minimisation is a concern this could be adapted for local inference or you could run my original pattern: OpenAI 4.1 Mini + 4.1 Transcribe Mini. 
+
+
 ## System Prompt
+
+- See: [system-prompt.md](script-elements/text-generation/system-prompt.md)
 
 Getting the system prompt right is, in my opinion, often the most challenging but also rewarding aspect of building out AI agents and workflows. 
 
