@@ -6,6 +6,8 @@ This AI agent (WIP) is an offshoot of an N8N workflow that I've been using for t
 
 ![alt text](graphics/workflow-1.png)
 
+![alt text](graphics/myuse.png)
+
 ## Table of Contents
 
 - [Sample Episode](#sample-episode)
