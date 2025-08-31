@@ -1,0 +1,3 @@
+episode_title: A catchy title for the podcast episode based on its main message.
+episode_description: A short episode description written in the third person. For example: *"In this episode, Herman answers Daniel's question about Y."* The description should be imaginative and interesting.
+episode_transcript**: The full text of the episode provided in plain text and precisely as the TTS engine will read it.

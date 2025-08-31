@@ -1,0 +1,9 @@
+Explain something about firewalls:
+
+By default, firewalls block traffic from the WAN to the LAN. 
+
+This sounds like it means that no external traffic can come into the network. 
+
+But clearly that is not the case: if you browse a website, you are sending requests to servers which are then streaming content which you are receiving locally and rendering in  a web browser.
+
+How to firewalls manage to do this? And to provide security against random connections from the outside while allowing safe/normal usage?
