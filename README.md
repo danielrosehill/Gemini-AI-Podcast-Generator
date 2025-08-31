@@ -1,6 +1,6 @@
 # Gemini Podcast Generator: Idea & Implementation
 
-![alt text](banner.webp)
+![alt text](graphics/banner.webp)
 
 This AI agent (WIP) is an offshoot of an N8N workflow that I've been using for the past few weeks to generate [a podcast](https://open.spotify.com/show/4RlBls1ZQxs4ciREOR8vpU?si=34F4kvIzRVCHo5ehvNYI2w) for my own listening. It has been an enjoyable experiment!
 
@@ -41,6 +41,8 @@ For those who are similarly interested in using this pattern for learning, here 
 
 The "frontend" to initiate this workflow could be a webhook payload or a Google Form collector or a web UI. This worked well under all these models in N8N with the exception that the structured output parsing (as usual) was hit-and-miss which is why I created this implementation.
 
+---
+
 ## Sample Episode
 
 **"The Gatekeepers of Your Digital Castle: How Firewalls Filter the Web"**
@@ -59,6 +61,9 @@ This sample episode demonstrates the full capabilities of the Gemini Podcast Gen
 - **Audio Model:** gemini-2.5-pro-preview-tts  
 - **Generated:** 2025-08-31T15:15:27
 - **Generation Time:** ~2-3 minutes (estimated)
+
+
+---
 
 ## Personal AI-Generated Podcast – The Idea / Motivation
 
@@ -92,64 +97,19 @@ Turning to Google, however, I found an option that ticked all the boxes while ke
 
 This engineering makes Gemini quite an ideal platform for podcast generation. Instead of forcing lengthy instructions into the LLM (for example: *"the text you generate must be readable by a TTS tool; therefore, don't read out full hyperlinks"*), you can move these rules to the TTS stage — or use both, with the latter functioning as a safety mechanism.
 
-## Deployment Workflows
+---
 
-### Recommended Deployment Options
+## System Prompt
 
-#### 1. Google Drive Integration
-Perfect for personal use and easy sharing:
+Getting the system prompt right is, in my opinion, often the most challenging but also rewarding aspect of building out AI agents and workflows. 
 
-```bash
-# Install Google Drive CLI (gdrive)
-# Upload generated episodes to Drive
-gdrive upload generated-episodes/*/episode.mp3
-gdrive upload generated-episodes/*/metadata.json
-gdrive upload generated-episodes/*/script.txt
-```
+The system prompt included in this repo as a model is a few iterations into my experimentation.
 
-**Benefits:**
-- Automatic syncing across devices
-- Easy sharing with specific people
-- Built-in version history
-- Free 15GB storage
+I use "Herman Poppleberry" as a persona for my AI agents (the real Herman is a stuffed animal donkey - as is Corn the sloth!). While I included this in the system prompt to add a touch of randomness and color to the episodes, I quickly saw the pitfall - the AI will include this is *every single intro** which becomes annoying after a while. 
 
-#### 2. AWS S3 Bucket Storage
-Ideal for scalable, production deployments:
+If you don't want your stuffed animals referenced in your personal AI podcast, omit this. The "offbeat humor" direction is there for the same reason - so that the episodes will have a touch of life to them. 
 
-```bash
-# Install AWS CLI and configure credentials
-aws s3 sync generated-episodes/ s3://your-podcast-bucket/episodes/
-aws s3 cp generated-episodes/*/episode.mp3 s3://your-podcast-bucket/audio/ --recursive
-```
+Finally, a huge advantage of Gemini's new TTS API (new at the time of writing) is the ability to add stylistic prompts in addition to text to be synthesised. This provides another area where you can add a light touch of instructions to get you away from the mechanical bot experience that might be factually interesting but is painful to listen to. 
 
-**Benefits:**
-- Highly scalable and reliable
-- CDN integration with CloudFront
-- Programmatic access via API
-- Cost-effective for large volumes
+I have experimented with this instruction but if you want something fairly neutral but apt you can instruct the model to read this text "in the style of an engaging and easy to listen to podcast host."
 
-#### 3. Hybrid Approach
-Combine both for maximum flexibility:
-
-1. **Local Generation** → Store episodes locally first
-2. **Google Drive** → Personal backup and mobile access  
-3. **S3** → Public distribution and podcast RSS feeds
-4. **Metadata Tracking** → Keep JSON files in both locations
-
-### Automation Scripts
-
-The repository includes helper scripts for common deployment scenarios:
-
-- `scripts/deploy-to-drive.py` - Automated Google Drive uploads
-- `scripts/deploy-to-s3.py` - AWS S3 batch uploads with metadata
-- `scripts/generate-rss.py` - Create podcast RSS feeds from metadata
-
-## Getting Started
-
-1. **Clone the repository**
-2. **Install dependencies:** `pip install -r requirements.txt`
-3. **Configure API keys** in `.env` (see `.env.example`)
-4. **Run episode generation:** `python generate_episodes.py`
-5. **Deploy using your preferred workflow** (see above)
-
-For detailed setup instructions, see the [workflow documentation](workflow.md).
