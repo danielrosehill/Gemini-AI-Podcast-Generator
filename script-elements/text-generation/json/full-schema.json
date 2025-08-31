@@ -1,0 +1,26 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "PodcastEpisode",
+    "type": "object",
+    "properties": {
+      "episode_title": {
+        "type": "string",
+        "description": "A catchy title for the podcast episode based on its main message."
+      },
+      "episode_description": {
+        "type": "string",
+        "description": "A short imaginative description written in the third person. Example: 'In this episode, Herman answers Daniel's question about Y.'"
+      },
+      "episode_transcript": {
+        "type": "string",
+        "description": "The full text of the episode in plain text, exactly as the TTS engine should read it."
+      }
+    },
+    "required": [
+      "episode_title",
+      "episode_description",
+      "episode_transcript"
+    ],
+    "additionalProperties": false
+  }
+  
